@@ -1,0 +1,207 @@
+$strong-cyan: hsl(172, 67%, 45%);
+$very-dark-cyan: hsl(183, 100%, 15%);
+$dark-grayish-cyan1: hsl(186, 14%, 43%);
+$dark-grayish-cyan2: hsl(184, 14%, 56%);
+$light-grayish-cyan1: hsl(185, 41%, 84%);
+$light-grayish-cyan2: hsl(189, 41%, 97%);
+$white: hsl(0, 0%, 100%);
+
+@mixin input-sizing($bg, $color) {
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+  padding: 0.2rem 0.7rem 0.2rem;
+  border: 2px solid #{$bg};
+  background-color: $bg;
+  color: $color;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+* {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Space Mono", monospace;
+  &:focus {
+    outline: none;
+  }
+}
+
+body {
+  background-color: $light-grayish-cyan1;
+  margin: 0;
+}
+
+header {
+  img {
+    display: block;
+    margin: 3rem auto;
+  }
+}
+
+.container {
+  padding: 2rem;
+  background-color: $white;
+  border-radius: 25px 25px 0 0;
+  display: flex;
+  flex-direction: column;
+  font-weight: 400;
+
+  .calculator-input {
+    label {
+      font-weight: 700;
+      color: $dark-grayish-cyan1;
+      display: inline-block;
+      margin-bottom: 0.6rem;
+    }
+
+    .input-bill {
+      position: relative;
+      margin-bottom: 1.2rem;
+
+      img {
+        position: absolute;
+        top: 0.9rem;
+        left: 1rem;
+      }
+
+      input {
+        @include input-sizing($light-grayish-cyan2, $very-dark-cyan);
+        text-align: right;
+        width: 100%;
+
+        &:active,
+        &:focus {
+          border-color: $strong-cyan;
+        }
+
+        &::placeholder {
+          color: $dark-grayish-cyan2;
+        }
+      }
+    }
+
+    .input-tip {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 1.2rem;
+
+      .tip-button {
+        @include input-sizing($very-dark-cyan, $white);
+        width: 48%;
+        margin-bottom: 0.8rem;
+
+        &:active,
+        &:focus,
+        &:hover {
+          border-color: $light-grayish-cyan1;
+          background-color: $light-grayish-cyan1;
+          color: $very-dark-cyan;
+        }
+      }
+
+      .tip-button-active {
+        background-color: $strong-cyan;
+        border-color: $strong-cyan;
+        color: $very-dark-cyan;
+      }
+
+      .text-input {
+        background-color: $light-grayish-cyan2;
+        border: 2px solid $light-grayish-cyan2;
+        text-align: right;
+        color: $very-dark-cyan;
+
+        &::placeholder {
+          color: $dark-grayish-cyan1;
+        }
+
+        &:active,
+        &:focus,
+        &:hover {
+          border-color: $light-grayish-cyan2;
+          background-color: $light-grayish-cyan2;
+          color: $very-dark-cyan;
+        }
+
+        &:active,
+        &:focus {
+          border: 2px solid $strong-cyan;
+        }
+      }
+    }
+
+    .input-people {
+      position: relative;
+      margin-bottom: 1.2rem;
+
+      img {
+        position: absolute;
+        top: 0.9rem;
+        left: 1rem;
+      }
+
+      input {
+        @include input-sizing($light-grayish-cyan2, $very-dark-cyan);
+        text-align: right;
+        width: 100%;
+
+        &:active,
+        &:focus {
+          border-color: $strong-cyan;
+        }
+
+        &::placeholder {
+          color: $dark-grayish-cyan2;
+        }
+      }
+    }
+  }
+
+  .calculator-result {
+    background-color: $very-dark-cyan;
+    border-radius: 15px;
+    padding: 1rem 1.5rem;
+
+    .result-info {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      margin-top: 1.5rem;
+
+      .info-label {
+        .label {
+          color: $white;
+          font-size: 1.1rem;
+          margin: 0;
+        }
+
+        .sublabel {
+          color: $dark-grayish-cyan2;
+          margin-top: 0;
+        }
+      }
+
+      .info-amount {
+        color: $strong-cyan;
+        font-size: 2.2rem;
+        margin: 0;
+      }
+    }
+
+    button {
+      @include input-sizing($strong-cyan, $very-dark-cyan);
+      width: 100%;
+      margin: 0.8rem auto;
+
+      &:active,
+      &:focus,
+      &:hover {
+        border-color: $light-grayish-cyan1;
+        background-color: $light-grayish-cyan1;
+      }
+    }
+  }
+}
