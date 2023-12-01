@@ -1,25 +1,43 @@
-# Practice - Ecommerce product page
+# tip calculator app
 
-## Table of contents
+A simple calculator for a Frontend Mentor challenge
 
-- [Overview](#overview)
-  - [Screenshot](#screenshot)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [Useful resources](#useful-resources)
+## Tech Stack
 
-## Overview
+**Client:** HTML and Sass
 
-### Screenshot
+## Run Locally
 
-![screenshot1](./resources/screenshot/screenshot01.png)
+Clone the project
 
-## My process
+```bash
+  git clone https://github.com/hafezfhmi/tip-calculator-app.git
+```
 
-### Built with
+Go to the project directory
 
-- HTML & SASS
+```bash
+  cd tip-calculator-app
+```
 
-### Useful resources
+Install SASS (optional)
 
-- Design Source: [Click here](https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX)
+```bash
+npm install -g sass
+```
+
+Compile scss to css (optional)
+
+```bash
+sass --watch style.scss style.css
+```
+
+Open `index.html` in your browser
+
+## Screenshots
+
+![App Screenshot](./resources/screenshot/screenshot01.png)
+
+## Demo
+
+https://tip-calculator-app.hafezfhmi.com
